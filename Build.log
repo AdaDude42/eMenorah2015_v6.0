@@ -1,0 +1,57 @@
+John@Snoopy /cygdrive/c/GNAT/2012/MyAVR/Dev/SW_PWM/v2s/src
+$ make
+avr-gcc -c -mmcu=avr6 -o crt1-atmega2560.o crt1-atmega2560.S
+mv crt1-atmega2560.o ../obj
+avr-gcc -c -mmcu=avr6 -o rand8_16_32.o rand8_16_32.c
+mv rand8_16_32.o ../obj
+avr-gnatmake -I"/cygdrive/c/GNAT/2012/share/examples/gnat-cross/avr/atmega2560" -D ../obj main -o main.elf -v -O2 -mmcu=avr6 --create-map-file \
+--RTS=zfp -largs ../obj\/crt1-atmega2560.o ../obj\/rand8_16_32.o -nostdlib \
+-lgcc -Wl,-mavr6 -Tdata=0x00800200
+
+GNATMAKE GPL 2012 (20120509)
+Copyright (C) 1995-2012, Free Software Foundation, Inc.
+  -> "main.elf" final executable
+  "main.ali" being checked ...
+  -> "main.ali" missing.
+avr-gcc -c -I/cygdrive/c/GNAT/2012/share/examples/gnat-cross/avr/atmega2560 -O2 -mmcu=avr6 --RTS=zfp -o C:\GNAT\2012\MyAVR\Dev\SW_PWM\v2s\obj\main.o main.adb
+  "atmega2560.ali" being checked ...
+  -> "atmega2560.ali" missing.
+avr-gcc -c -I/cygdrive/c/GNAT/2012/share/examples/gnat-cross/avr/atmega2560 -O2 -mmcu=avr6 --RTS=zfp -o C:\GNAT\2012\MyAVR\Dev\SW_PWM\v2s\obj\atmega2560.o atmega2560.ads
+  "atmega2560_timers.ali" being checked ...
+  -> "atmega2560_timers.ali" missing.
+avr-gcc -c -I/cygdrive/c/GNAT/2012/share/examples/gnat-cross/avr/atmega2560 -O2 -mmcu=avr6 --RTS=zfp -o C:\GNAT\2012\MyAVR\Dev\SW_PWM\v2s\obj\atmega2560_timers.o atmega2560_timers.ads
+  "atmega2560_timers-tc1345.ali" being checked ...
+  -> "atmega2560_timers-tc1345.ali" missing.
+avr-gcc -c -I/cygdrive/c/GNAT/2012/share/examples/gnat-cross/avr/atmega2560 -O2 -mmcu=avr6 --RTS=zfp -o C:\GNAT\2012\MyAVR\Dev\SW_PWM\v2s\obj\atmega2560_timers-tc1345.o atmega2560_timers-tc1345.adb
+  "atmega2560_timers-tc1345-timer1.ali" being checked ...
+  -> "atmega2560_timers-tc1345-timer1.ali" missing.
+avr-gcc -c -I/cygdrive/c/GNAT/2012/share/examples/gnat-cross/avr/atmega2560 -O2 -mmcu=avr6 --RTS=zfp -o C:\GNAT\2012\MyAVR\Dev\SW_PWM\v2s\obj\atmega2560_timers-tc1345-timer1.o atmega2560_timers-tc1345-timer1.adb
+  "atmega2560_timers-tc1345-timer3.ali" being checked ...
+  -> "atmega2560_timers-tc1345-timer3.ali" missing.
+avr-gcc -c -I/cygdrive/c/GNAT/2012/share/examples/gnat-cross/avr/atmega2560 -O2 -mmcu=avr6 --RTS=zfp -o C:\GNAT\2012\MyAVR\Dev\SW_PWM\v2s\obj\atmega2560_timers-tc1345-timer3.o atmega2560_timers-tc1345-timer3.adb
+  "candles.ali" being checked ...
+  -> "candles.ali" missing.
+avr-gcc -c -I/cygdrive/c/GNAT/2012/share/examples/gnat-cross/avr/atmega2560 -O2 -mmcu=avr6 --RTS=zfp -o C:\GNAT\2012\MyAVR\Dev\SW_PWM\v2s\obj\candles.o candles.adb
+candles.adb:28:09: warning: types for unchecked conversion have different sizes
+  "random.ali" being checked ...
+  -> "random.ali" missing.
+avr-gcc -c -I/cygdrive/c/GNAT/2012/share/examples/gnat-cross/avr/atmega2560 -O2 -mmcu=avr6 --RTS=zfp -o C:\GNAT\2012\MyAVR\Dev\SW_PWM\v2s\obj\random.o random.ads
+  "timer3_clock.ali" being checked ...
+  -> "timer3_clock.ali" missing.
+avr-gcc -c -I/cygdrive/c/GNAT/2012/share/examples/gnat-cross/avr/atmega2560 -O2 -mmcu=avr6 --RTS=zfp -o C:\GNAT\2012\MyAVR\Dev\SW_PWM\v2s\obj\timer3_clock.o timer3_clock.adb
+  "candles-pwm_ada.ali" being checked ...
+  -> "candles-pwm_ada.ali" missing.
+avr-gcc -c -I/cygdrive/c/GNAT/2012/share/examples/gnat-cross/avr/atmega2560 -O2 -mmcu=avr6 --RTS=zfp -o C:\GNAT\2012\MyAVR\Dev\SW_PWM\v2s\obj\candles-pwm_ada.o candles-pwm_ada.adb
+End of compilation
+avr-gnatbind -I/cygdrive/c/GNAT/2012/share/examples/gnat-cross/avr/atmega2560 -aOC:\GNAT\2012\MyAVR\Dev\SW_PWM\v2s\obj --RTS=zfp -x C:\GNAT\2012\MyAVR\Dev\SW_PWM\v2s\obj\main.ali
+avr-gnatlink C:\GNAT\2012\MyAVR\Dev\SW_PWM\v2s\obj\main.ali -o main.elf -O2 -mmcu=avr6 ../obj/crt1-atmega2560.o ../obj/rand8_16_32.o -nostdlib -lgcc -Wl,-mavr6 -Tdata=0x00800200 -M
+avr-objcopy -O ihex main.elf main.hex
+mv main.elf ../bin
+mv main.hex ../bin
+mv main.map ../bin
+
+John@Snoopy /cygdrive/c/GNAT/2012/MyAVR/Dev/SW_PWM/v2s/src
+$ cp Makefile.gnat Makefile
+
+John@Snoopy /cygdrive/c/GNAT/2012/MyAVR/Dev/SW_PWM/v2s/src
+$
